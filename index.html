@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width; initial-scale=1"/>
+    <title>Kindle TTY</title>
+    <style>
+      body, html {
+      padding: 0;
+      margin: 0;
+      border: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      }
+      .rotado {
+      position: relative;
+      -webkit-transform-origin: bottom left 0;
+      -webkit-transform: rotate(90deg);
+      }
+      #consola {
+      font-family: "Lucida Console", Monaco, monospace;
+      font-size: 1.18em;
+      width: 100%;
+      height: 100%;
+      word-wrap: break-word;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="contenedor">
+      <div id="consola">
+	Con 1.2em tiene una resolucion de 63 columnas x 28 lineas
+      </div>
+    </div>
+    <script src="client.js"></script>
+  </body>
+</html>
