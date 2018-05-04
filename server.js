@@ -21,11 +21,11 @@ const server = http.createServer((request, response) => {
 	fs.createReadStream('client.js').pipe(response);
     }
 });
-const sendMessage = function(message) {
+const sendMessage = function(message, cursor) {
     if (wsClients.length === 0)
 	return;
     const json = new Buffer(
-	JSON.stringify({ msj : message }));
+	JSON.stringify({ msj : message, cursor : cursor }));
     const outBuffer = new Buffer(json.length + 2);
     outBuffer.writeUInt8(0, 0);
     json.copy(outBuffer, 1);
@@ -63,7 +63,7 @@ server.on("upgrade", (req, socket, head) => {
             }
 	    return n / spaces;
 	}
-	const answer = new Buffer(4 * 2 + NONCE_LENGTH);
+	var answer = new Buffer(4 * 2 + NONCE_LENGTH);
 	answer.writeInt32BE(processKey(key1), 0);
 	answer.writeInt32BE(processKey(key2), 4);
 	nonce.copy(answer, 8);
@@ -154,7 +154,7 @@ fifo.on('data', data => {
 	var contenido = "";
 	for (var i = 0; i < KINDLE_LINES; i++)
 	    contenido += processLine(terminal.state.getLine(i));
-	sendMessage(contenido);
+	sendMessage(contenido, terminal.state.cursor);
     }, 0);
 });
 fifo.pipe(terminal);

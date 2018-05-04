@@ -17,12 +17,24 @@
       -webkit-transform-origin: bottom left 0;
       -webkit-transform: rotate(90deg);
       }
-      #consola {
+      #contenedor {
       font-family: "Lucida Console", Monaco, monospace;
       font-size: 1.18em;
       width: 100%;
       height: 100%;
       word-wrap: break-word;
+      }
+      #cursor {
+      position: absolute;
+      font-weight: bold;
+      top: 0;
+      left: 0;
+      }
+      #cursor span {
+      color: #000;
+      }
+      #cursor.alt span {
+      color: #fff;
       }
       .f0 { color: #fff; }
       .f1 { color: #222; }
@@ -44,6 +56,7 @@
   </head>
   <body class="f7 b0">
     <div id="contenedor">
+      <div id="cursor"></div>
       <div id="consola">
 	font-size: 1.2em = 63 COLS x 28 LINES
       </div>
