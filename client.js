@@ -4,7 +4,6 @@ const COLOR_ERROR = "#c43131";
 const setMessage = function(message) {
     consola.innerHTML = message;
 };
-
 var active = false;
 const startListener = function() {
     if (active)
@@ -44,4 +43,3 @@ const rotarContenedor = function() {
     startListener();
 }
 contenedor.addEventListener("click", rotarContenedor);
-//setTimeout(rotarContenedor, 200);
