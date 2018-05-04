@@ -4,7 +4,8 @@
   "description": "A simple utility to replicate a tty on the kindle on real time!",
   "main": "server.js",
   "dependencies": {
-    "terminal.js": "^1.0.10"
+    "terminal.js": "^1.0.10",
+    "ws-plus-hixie": "git+https://bitbucket.org/ocampos/ws-plus-hixie.git"
   },
   "devDependencies": {},
   "scripts": {
