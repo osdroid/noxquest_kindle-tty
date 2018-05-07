@@ -1,6 +1,6 @@
 {
   "name": "kindle-tty",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple utility to replicate a tty on the kindle on real time!",
   "main": "server.js",
   "dependencies": {
