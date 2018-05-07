@@ -1,6 +1,6 @@
 #!/bin/bash
 if [ -z "$TMUX" ]; then
-    echo $'\e[1:31mNot in a tmux window\e[m'
+    echo $'\e[1;31mNot in a tmux window\e[m'
     exit 1
 fi
 
